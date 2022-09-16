@@ -29,7 +29,43 @@ def cambiarStrInteger(vehiculos):
         vehiculos[fila][4]=int(vehiculos[fila][4])
         vehiculos[fila][5]=float(vehiculos[fila][5])
         vehiculos[fila][6]=float(vehiculos[fila][6])
+
+def cambiarStr(vehiculos):
+    for fila in range(len(vehiculos)):
+        vehiculos[fila][0]=str(vehiculos[fila][0])
+        vehiculos[fila][1]=str(vehiculos[fila][1])
+        vehiculos[fila][2]=str(vehiculos[fila][2])
+        vehiculos[fila][7]=str(vehiculos[fila][7])
         
+def busquedaBinaria(arreglo, busqueda):
+    izquierda, derecha = 0, len(arreglo) - 1
+    while izquierda <= derecha:
+        indiceDelElementoDelMedio = (izquierda + derecha) // 2
+        elementoDelMedio = arreglo[indiceDelElementoDelMedio][0]
+        if elementoDelMedio == busqueda:
+            return indiceDelElementoDelMedio
+        if busqueda < elementoDelMedio:
+            derecha = indiceDelElementoDelMedio - 1
+        else:
+            izquierda = indiceDelElementoDelMedio + 1
+    # Si salimos del ciclo significa que no existe el valor
+    return -1
+
+
+def busquedaBinariaRecursiva(arreglo, busqueda, izquierda, derecha):
+    if izquierda > derecha:
+        return -1
+    indiceDelElementoDelMedio = (izquierda + derecha) // 2
+    elementoDelMedio = arreglo[indiceDelElementoDelMedio]
+    print(elementoDelMedio)
+    if elementoDelMedio == busqueda:
+        return indiceDelElementoDelMedio
+    if busqueda < elementoDelMedio:
+        return busqueda_binaria_recursiva(arreglo, busqueda, izquierda, indiceDelElementoDelMedio - 1)
+    else:
+        return busqueda_binaria_recursiva(arreglo, busqueda, indiceDelElementoDelMedio + 1, derecha)
+
+
 
 #---------- main ----------
 vehiculos = []
@@ -38,4 +74,20 @@ for linea in archivo:
     vehiculo=linea.rstrip("\n").split(";")
     vehiculos.append(vehiculo)
 cambiarStrInteger(vehiculos)
+cambiarStr(vehiculos)
+vehiculos.sort()
 mostrar(vehiculos)
+
+opcion = 99
+while  opcion!= 0:
+    opcion = menu()
+    if opcion == 1:
+        dominio = input('ingrese el dominio que busca: ')
+        pos = busquedaBinaria(vehiculos,dominio)
+        if pos==-1:
+            input('dominio no existe')
+        else:
+            vehiculosAux = []
+            vehiculosAux.append(vehiculos[pos])
+            mostrar(vehiculosAux)
+
