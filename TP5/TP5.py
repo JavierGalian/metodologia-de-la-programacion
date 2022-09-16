@@ -2,7 +2,7 @@ from io import open
 import os
 
 def menu():
-    print('1) Cargar vehiculos...')
+    print('1) Buscar por dominio')
     print('2) Mostrar el listado de vehiculos.')
     print('3) Reservar automovil por su dominio')
     print('4) Buscar un automovil por su dominio')
@@ -30,12 +30,6 @@ def cambiarStrInteger(vehiculos):
         vehiculos[fila][5]=float(vehiculos[fila][5])
         vehiculos[fila][6]=float(vehiculos[fila][6])
 
-def cambiarStr(vehiculos):
-    for fila in range(len(vehiculos)):
-        vehiculos[fila][0]=str(vehiculos[fila][0])
-        vehiculos[fila][1]=str(vehiculos[fila][1])
-        vehiculos[fila][2]=str(vehiculos[fila][2])
-        vehiculos[fila][7]=str(vehiculos[fila][7])
         
 def busquedaBinaria(arreglo, busqueda):
     izquierda, derecha = 0, len(arreglo) - 1
@@ -74,9 +68,7 @@ for linea in archivo:
     vehiculo=linea.rstrip("\n").split(";")
     vehiculos.append(vehiculo)
 cambiarStrInteger(vehiculos)
-cambiarStr(vehiculos)
 vehiculos.sort()
-mostrar(vehiculos)
 
 opcion = 99
 while  opcion!= 0:
