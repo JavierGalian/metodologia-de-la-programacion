@@ -1,19 +1,18 @@
 from io import open
 import os
+import re
 
 def menu():
     print('1) Buscar por dominio')
-    print('2) Mostrar el listado de vehiculos.')
+    print('2) Buscar por marca')
     print('3) Reservar automovil por su dominio')
-    print('4) Buscar un automovil por su dominio')
-    print('5) Ordenar asc/desc por marca. ')
-    print('6) Ordenar asc/desc por Precio Venta')
-    print('0) Salir')
+    print('0) salir')
     eleccion = int(input('Elija una opción: '))
     while not((eleccion >= 0) and (eleccion <= 6)):
         eleccion = int(input('Elija una opción: '))
     os.system('cls')
     return eleccion
+    
 
 def mostrar(vehiculos):
     print('\n Dominio     Marca         Tipo        Modelo   Kilometraje Precio_Valuado   PrecioVenta   Estado')
@@ -60,6 +59,16 @@ def busquedaBinariaRecursiva(arreglo, busqueda, izquierda, derecha):
         return busqueda_binaria_recursiva(arreglo, busqueda, indiceDelElementoDelMedio + 1, derecha)
 
 
+def busquedaAutonovilesMarca(vehiculos,vehiculosAux2,bus):
+    for fila in range(len(vehiculos)):
+            if vehiculos[fila][1].count(bus)>0:
+                vehiculosAux2.append(vehiculos[fila])
+
+
+def cambiasStr(vehiculosAux3):
+    for fila in range(len(vehiculos)):
+        for columna in range(len(vehiculos[fila])):
+            vehiculos[fila][columna]=str(vehiculos[fila][columna])
 
 #---------- main ----------
 vehiculos = []
@@ -82,4 +91,18 @@ while  opcion!= 0:
             vehiculosAux = []
             vehiculosAux.append(vehiculos[pos])
             mostrar(vehiculosAux)
-
+    elif opcion == 2:
+        bus=input('ingrese la narca del automovil: ')
+        vehiculosAux2 = []
+        busquedaAutonovilesMarca(vehiculos,vehiculosAux2,bus.title())
+        mostrar(vehiculosAux2)
+    elif opcion == 3:
+        nombreTxt = input('Crear fichero de ma marca: ')
+        ficheroDeVehiculos = open ('TP5/datos/{}.txt'.format(nombreTxt),'w')
+        vehiculosAux3 = []
+        busquedaAutonovilesMarca(vehiculos,vehiculosAux3,nombreTxt.title())
+        ficheroDeVehiculos.write(str(vehiculosAux3))
+        ficheroDeVehiculos.close()
+    elif opcion == 0:
+        print("FIN DEL PROGRAMA...")
+        presionarTecla() 
