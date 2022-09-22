@@ -12,6 +12,9 @@ def menu():
         eleccion = int(input('Elija una opción: '))
     os.system('cls')
     return eleccion
+
+def presionarTecla():
+   input('Presione una tecla...')
     
 
 def mostrar(vehiculos):
