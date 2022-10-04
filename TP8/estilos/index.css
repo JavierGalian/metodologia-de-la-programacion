@@ -1,0 +1,53 @@
+
+body{
+    display: grid;
+    min-height: 97vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* HEADER */
+img{
+    width: 280px;
+    height: 90px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+.menu{
+    display: flex;
+}
+.items{
+    padding: 15px;
+    text-decoration: none;
+}
+.list-menu{
+    list-style: none;
+}
+.items:hover{
+    background-color: blue;
+    color: white;
+    padding: 15px;
+    border-radius: 20%;
+}
+
+/* ARTICLE */
+
+.cuerpo-article{
+    text-align: center;
+}
+
+
+/* FOOTER */
+.footer{
+    background-color: slategrey;
+    padding:  5px 10px 20px;
+}
+.list-footer{
+    list-style: none;
+}
+.items-footer{
+    text-decoration: none;
+    color: blue;
+}
