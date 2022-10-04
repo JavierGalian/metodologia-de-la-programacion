@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="/TP8/estilos/acercaDe.html.css">
     <link rel="stylesheet" type="text/css" href="/TP8/estilos/index.css">
+    <script src="/TP8/js/index.js"></script>
     <title>team NOMBRE_TEAM</title>
 </head>
 <body>
@@ -19,12 +22,19 @@
         </nav>
     </header>
     <article class="cuerpo-article">
-        <p>acerca de</p>
+        <p class="grupo">grupo:</p>
+        <div class="galeria-container">
+            <div id="lista1">
+                <script>integrantes(integrantesGrupo)</script>
+            </div>
+        </div>
+        <ul class="lista-grupo" id="lista">
+            <script>mostrarLista(integrantesGrupo)</script>
+        </ul>
     </article>    
     <footer class="footer">
         <p>contactos</p>
         <li class="list-footer"><a href="https://virtual.unju.edu.ar/user/profile.php?id=8721" class="items-footer">Perfil unju virtual</a></li>
     </footer>
-    
 </body>
 </html>
