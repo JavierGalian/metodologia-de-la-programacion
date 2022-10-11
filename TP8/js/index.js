@@ -1,13 +1,9 @@
-var nombreGrupo = 'NOMBRE_TEAM  ';
-nombreDelGrupo = () => document.write(nombreGrupo);
+const d = document;
+const btnMenu = d.querySelector(".panel-btn");
 
-
-integrantesGrupo = ['name1','name2','name3'];
-function mostrarLista(){
-    for (let i = 0; i <= 2; i++) {
-        document.querySelector("#lista").innerHTML += "<li>"+ integrantesGrupo[i]+"</li>";
+btnMenu.addEventListener("click", (e) => {
+    if (e.target.matches(".panel-btn") || e.target.matches(".panel-btn *")){
+        d.querySelector(".menu").classList.toggle("is-active")
+        d.querySelector(".panel-btn").classList.toggle("is-active")
     }
-}
-integrantesGrupo.forEach(function(element){
-    document.querySelector("#lista").innerHTML += "<li>"+ integrantesGrupo[i]+"</li>";
-});
+})

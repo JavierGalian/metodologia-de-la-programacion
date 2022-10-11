@@ -1,14 +1,14 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" type="text/css" href="/TP8/estilos/acercaDe.html.css">
     <link rel="stylesheet" type="text/css" href="/TP8/estilos/index.css">
-    <script src="/TP8/js/index.js"></script>
+    
     <title>team NOMBRE_TEAM</title>
+
+    <link href="/TP8/estilos/hamburgers.css" rel="stylesheet">
+
 </head>
 <body>
     <header>
@@ -20,21 +20,22 @@
 				<li class="list-menu"><a href="/TP8/views/contacto.html" class="items">Contacto</a></li>
 			</ul>
         </nav>
+        <button id="hamburger" class="panel-btn hamburger hamburger--vortex" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+        </button>
     </header>
+
     <article class="cuerpo-article">
-        <p class="grupo">grupo:</p>
-        <div class="galeria-container">
-            <div id="lista1">
-                <script>integrantes(integrantesGrupo)</script>
-            </div>
-        </div>
-        <ul class="lista-grupo" id="lista">
-            <script>mostrarLista(integrantesGrupo)</script>
-        </ul>
-    </article>    
+       
+    </article>
+
+    
     <footer class="footer">
         <p>contactos</p>
         <li class="list-footer"><a href="https://virtual.unju.edu.ar/user/profile.php?id=8721" class="items-footer">Perfil unju virtual</a></li>
     </footer>
+    <script src="/TP8/js/index.js"type="module"></script>
 </body>
 </html>

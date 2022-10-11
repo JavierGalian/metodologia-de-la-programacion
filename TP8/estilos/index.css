@@ -1,36 +1,84 @@
 
+:root{
+    --color-main: blue;
+}
+
 body{
     display: grid;
     min-height: 97vh;
     grid-template-rows: auto 1fr auto;
 }
+img{
+    width: 200px;
+}
 
 /* HEADER */
-img{
-    width: 280px;
-    height: 90px;
+header{
+    position: sticky;
+    top: 0;
 }
-.navbar{
+
+.panel-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 0;
     display: flex;
-    justify-content: space-between;
-    background-color: white;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
 }
 .menu{
+    position: fixed;
+    z-index: 998;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(34,34,34,0.85);
+    
+
+    transition: transform 0.3s ease;
+    /*de arriba*/
+    transform:translate(0,-150%) ;
+
+    width: inherit;
+    padding: 0;
     display: flex;
-}
-.items{
-    padding: 15px;
-    text-decoration: none;
-}
-.list-menu{
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
     list-style: none;
 }
-.items:hover{
-    background-color: blue;
-    color: white;
-    padding: 15px;
-    border-radius: 20%;
+
+.menu.is-active{
+transform: translate(0,0);
 }
+
+.menu a{
+    padding: 2rem;
+    width: inherit;
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--color-main);
+    transition: all 0.3 ease;
+}
+ li{
+    width: 100%;
+ }
+.menu a:hover{
+    font-weight: bold;
+    color: rgba(34,34,34,0.85);
+    background-color: var(--color-main);
+}
+
 
 /* ARTICLE */
 
@@ -50,4 +98,51 @@ img{
 .items-footer{
     text-decoration: none;
     color: blue;
+}
+
+@media (max-width: 800px){
+
+    /*.panel-btn{
+        position: fixed;
+        z-index: 999;
+        bottom: 1vh;
+        right: 1vw;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: blue;
+    }
+    .menu{
+        position: fixed;
+        z-index: 998;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: rgba(34,34,34,0.85);
+
+        width: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menu a{
+        padding: 2rem;
+        width: inherit;
+        display: block;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: yellow;
+        transition: all 0.3 ease;
+    }*/
+
+
 }
